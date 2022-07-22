@@ -50,11 +50,9 @@ export const formatPrice = (price) => `${price.toString().replace(/\B(?=(\d{3})+
 
 export const filterTicketsListByTransfers = (ticketsList, filtersList) => {
   return ticketsList.filter((ticket) => {
-    return filtersList.includes(
-      ticket.segments
-        .map((element) => element.stops.length)
-        .reduce((previousValue, currentValue) => previousValue + currentValue, 0)
-    );
+    const [transferThere, transferBack] = ticket.segments.map((element) => element.stops.length);
+
+    return filtersList.includes(transferThere || transferBack);
   });
 };
 
