@@ -22,7 +22,9 @@
   },
   "plugins": ["react", "prettier", "import"],
   "rules": {
-    "indent": ["error", 2],
+    "no-param-reassign": 0,
+    "default-param-last": 0,
+    "indent": "off",
     "prettier/prettier": "error",
     "linebreak-style": [0, "unix"],
     "quotes": ["error", "single"],
